@@ -1,7 +1,11 @@
 import React, { Fragment, useState } from 'react';
 import Alerta from './Alerta';
 
-const ColocarPresupuesto = ({ setPresupuesto, setRestante }) => {
+const ColocarPresupuesto = ({
+	setPresupuesto,
+	setRestante,
+	setMostrarIngresoPresupuesto,
+}) => {
 	const [presupuestoIngresado, setPresupuestoIngresado] = useState(0);
 	const [errorPresupuesto, setErrorPresupuesto] = useState(false);
 
@@ -18,6 +22,7 @@ const ColocarPresupuesto = ({ setPresupuesto, setRestante }) => {
 		setErrorPresupuesto(false);
 
 		setPresupuesto(presupuestoIngresado);
+		setMostrarIngresoPresupuesto(false);
 	};
 
 	function mostrarAlerta() {
