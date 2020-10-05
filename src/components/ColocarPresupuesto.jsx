@@ -22,6 +22,7 @@ const ColocarPresupuesto = ({
 		setErrorPresupuesto(false);
 
 		setPresupuesto(presupuestoIngresado);
+		setRestante(presupuestoIngresado);
 		setMostrarIngresoPresupuesto(false);
 	};
 
