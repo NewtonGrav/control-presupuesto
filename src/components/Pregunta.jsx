@@ -1,7 +1,9 @@
-import React, { Fragment } from 'react';
+import React, { Fragment, useState } from 'react';
+import Alerta from './Alerta';
 
 const Pregunta = () => {
 	const [presupuesto, setPresupuesto] = useState(0);
+	const [errorPresupuesto, setErrorPresupuesto] = useState(false);
 
 	const presupuestoDefinido = (e) => {
 		setPresupuesto(parseInt(e.target.value));
@@ -23,7 +25,11 @@ const Pregunta = () => {
 
 	return (
 		<Fragment>
-			<h3 className="display-6 mb-5">Coloca tu presupuesto</h3>
+			<h3 className='display-6 mb-5'>Coloca tu presupuesto</h3>
+
+			{errorPresupuesto ? (
+				<Alerta texto='El presupuesto ingresado es incorrecto' tipo='danger' />
+			) : null}
 
 			<form onSubmit={agregarPresupuesto}>
 				<div className='mb-4'>
