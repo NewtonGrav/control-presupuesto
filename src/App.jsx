@@ -7,13 +7,13 @@ function App() {
 
 	return (
 		<div className='container'>
-			<header>
+			<main>
 				<h1 className='display-3 mb-5 text-light'>Gasto Semanal</h1>
 
 				<div className='contenido-principal contenido p-5'>
 					<Pregunta setPresupuesto={setPresupuesto} setRestante={setRestante} />
 				</div>
-			</header>
+			</main>
 		</div>
 	);
 }
