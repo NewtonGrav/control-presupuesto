@@ -1,9 +1,9 @@
 import React, { Fragment, useState } from 'react';
 import Alerta from './Alerta';
 
+const Pregunta = ({ setPresupuesto, setRestante }) => {
 	const [presupuestoIngresado, setPresupuestoIngresado] = useState(0);
 	const [errorPresupuesto, setErrorPresupuesto] = useState(false);
-
 
 	const presupuestoDefinido = (e) => {
 		setPresupuestoIngresado(parseInt(e.target.value));
@@ -20,8 +20,8 @@ import Alerta from './Alerta';
 		setErrorPresupuesto(false);
 
 		// Accion
+		setPresupuesto(presupuestoIngresado);
 	};
-
 
 	function mostrarAlerta() {
 		setTimeout(() => setErrorPresupuesto(false), 4000);
