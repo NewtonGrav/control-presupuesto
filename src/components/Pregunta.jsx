@@ -1,20 +1,18 @@
 import React, { Fragment, useState } from 'react';
 import Alerta from './Alerta';
 
-const Pregunta = () => {
-	const [presupuesto, setPresupuesto] = useState(0);
+	const [presupuestoIngresado, setPresupuestoIngresado] = useState(0);
 	const [errorPresupuesto, setErrorPresupuesto] = useState(false);
 
 
 	const presupuestoDefinido = (e) => {
-		setPresupuesto(parseInt(e.target.value));
+		setPresupuestoIngresado(parseInt(e.target.value));
 	};
 
 	const agregarPresupuesto = (e) => {
 		e.preventDefault();
 
-		// Validar
-		if (presupuesto < 1 || isNaN(presupuesto)) {
+		if (presupuestoIngresado < 1 || isNaN(presupuestoIngresado)) {
 			setErrorPresupuesto(true);
 			return;
 		}
@@ -34,6 +32,7 @@ const Pregunta = () => {
 	return (
 		<Fragment>
 			<h3 className='display-6 mb-5'>Coloca tu presupuesto</h3>
+
 			{errorPresupuesto ? mostrarAlerta() : null}
 
 			<form onSubmit={agregarPresupuesto}>
