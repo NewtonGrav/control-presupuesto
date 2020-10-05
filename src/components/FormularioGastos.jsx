@@ -7,7 +7,7 @@ const FormularioGastos = () => {
 
 			<form>
 				<div className='mb-3'>
-					<label class='form-label'>Nombre Gasto</label>
+					<label className='form-label'>Nombre Gasto</label>
 					<input
 						type='text'
 						className='form-control'
@@ -17,7 +17,7 @@ const FormularioGastos = () => {
 				</div>
 
 				<div className='mb-3'>
-					<label class='form-label'>Cantidad Gasto</label>
+					<label className='form-label'>Cantidad Gasto</label>
 					<input
 						type='number'
 						className='form-control'
