@@ -5,17 +5,18 @@ const Pregunta = () => {
 	const [presupuesto, setPresupuesto] = useState(0);
 	const [errorPresupuesto, setErrorPresupuesto] = useState(false);
 
+
 	const presupuestoDefinido = (e) => {
 		setPresupuesto(parseInt(e.target.value));
 	};
 
 	const agregarPresupuesto = (e) => {
 		e.preventDefault();
-    
+
 		// Validar
 		if (presupuesto < 1 || isNaN(presupuesto)) {
-      setErrorPresupuesto(true);
-      return
+			setErrorPresupuesto(true);
+			return;
 		}
 
 		setErrorPresupuesto(false);
@@ -23,13 +24,17 @@ const Pregunta = () => {
 		// Accion
 	};
 
+
+	function mostrarAlerta() {
+		setTimeout(() => setErrorPresupuesto(false), 4000);
+
+		return <Alerta texto='El presupuesto ingresado es incorrecto' tipo='danger' />;
+	}
+
 	return (
 		<Fragment>
 			<h3 className='display-6 mb-5'>Coloca tu presupuesto</h3>
-
-			{errorPresupuesto ? (
-				<Alerta texto='El presupuesto ingresado es incorrecto' tipo='danger' />
-			) : null}
+			{errorPresupuesto ? mostrarAlerta() : null}
 
 			<form onSubmit={agregarPresupuesto}>
 				<div className='mb-4'>
