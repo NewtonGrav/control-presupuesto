@@ -1,7 +1,7 @@
 import React, { Fragment, useState } from 'react';
 import Alerta from './Alerta';
 
-const Pregunta = ({ setPresupuesto, setRestante }) => {
+const ColocarPresupuesto = ({ setPresupuesto, setRestante }) => {
 	const [presupuestoIngresado, setPresupuestoIngresado] = useState(0);
 	const [errorPresupuesto, setErrorPresupuesto] = useState(false);
 
@@ -53,4 +53,4 @@ const Pregunta = ({ setPresupuesto, setRestante }) => {
 	);
 };
 
-export default Pregunta;
+export default ColocarPresupuesto;
