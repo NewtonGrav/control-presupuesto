@@ -5,9 +5,7 @@ const ColocarPresupuesto = ({ setPresupuesto, setRestante }) => {
 	const [presupuestoIngresado, setPresupuestoIngresado] = useState(0);
 	const [errorPresupuesto, setErrorPresupuesto] = useState(false);
 
-	const presupuestoDefinido = (e) => {
-		setPresupuestoIngresado(parseInt(e.target.value));
-	};
+	const presupuestoDefinido = (e) => setPresupuestoIngresado(parseInt(e.target.value));
 
 	const agregarPresupuesto = (e) => {
 		e.preventDefault();
@@ -19,7 +17,6 @@ const ColocarPresupuesto = ({ setPresupuesto, setRestante }) => {
 
 		setErrorPresupuesto(false);
 
-		// Accion
 		setPresupuesto(presupuestoIngresado);
 	};
 
