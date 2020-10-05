@@ -9,7 +9,7 @@ const ColocarPresupuesto = ({
 	const [presupuestoIngresado, setPresupuestoIngresado] = useState(0);
 	const [errorPresupuesto, setErrorPresupuesto] = useState(false);
 
-	const presupuestoDefinido = (e) => setPresupuestoIngresado(parseInt(e.target.value));
+	const definiendoPresupuesto = (e) => setPresupuestoIngresado(parseInt(e.target.value));
 
 	const agregarPresupuesto = (e) => {
 		e.preventDefault();
@@ -20,7 +20,6 @@ const ColocarPresupuesto = ({
 		}
 
 		setErrorPresupuesto(false);
-
 		setPresupuesto(presupuestoIngresado);
 		setRestante(presupuestoIngresado);
 		setMostrarIngresoPresupuesto(false);
@@ -42,7 +41,7 @@ const ColocarPresupuesto = ({
 				<div className='mb-4'>
 					<input
 						type='number'
-						onChange={presupuestoDefinido}
+						onChange={definiendoPresupuesto}
 						className='form-control form-control-lg'
 						placeholder='Presupuesto'
 					/>
