@@ -1,17 +1,24 @@
 import React, { Fragment, useState } from 'react';
+import Alerta from './Alerta';
 
 const FormularioGastos = () => {
 	const [nombreGasto, setNombreGasto] = useState('');
 	const [cantidadGasto, setCantidadGasto] = useState(0);
+	const [errorEnGasto, setErrorEnGasto] = useState(false);
+
+	const agregarGasto = (e) => {
+		e.preventDefault();
+
+		if (nombreGasto === '' || cantidadGasto <= 0 || isNaN(cantidadGasto)) {
+			setErrorEnGasto(true);
+			return;
+		}
+
+		// TODO Agregar gasto a la lista
+	};
 
 	const onChanged = (e) => {
 		if (e.target.name === 'cantidad') {
-			let cantidadIngresada = e.target.value;
-			if (cantidadIngresada <= 0 || isNaN(cantidadIngresada)) {
-        // TODO Error de cantidad
-        return;
-      }
-      
 			setCantidadGasto(parseInt(e.target.value));
 		} else {
 			setNombreGasto(e.target.value);
@@ -22,7 +29,14 @@ const FormularioGastos = () => {
 		<Fragment>
 			<h3>Agrega tus gastos</h3>
 
-			<form>
+			{errorEnGasto ? (
+				<Alerta
+					texto='El gasto ingresado no parece correcto. Verifique los campos'
+					tipo='danger'
+				/>
+			) : null}
+
+			<form onSubmit={agregarGasto}>
 				<div className='mb-3'>
 					<label className='form-label'>Nombre Gasto</label>
 					<input
