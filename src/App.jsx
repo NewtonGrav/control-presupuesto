@@ -10,7 +10,7 @@ function App() {
 	return (
 		<div className='container'>
 			<main>
-				<h1 className='display-3 mb-5 text-light'>Gasto Semanal</h1>
+				<h1 className='display-3 my-5 text-light'>Gasto Semanal</h1>
 
 				<section className='contenido-principal contenido p-5'>
 					{mostrarIngresoPresupuesto ? (
