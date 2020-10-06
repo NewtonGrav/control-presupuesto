@@ -2,14 +2,14 @@ import React, { Fragment, useState } from 'react';
 import Alerta from './Alerta';
 
 const FormularioGastos = () => {
-	const [nombreGasto, setNombreGasto] = useState('');
-	const [cantidadGasto, setCantidadGasto] = useState(0);
+	const [nombre, setGasto] = useState('');
+	const [cantidad, setCantidad] = useState(0);
 	const [errorEnGasto, setErrorEnGasto] = useState(false);
 
 	const agregarGasto = (e) => {
 		e.preventDefault();
 
-		if (nombreGasto === '' || cantidadGasto <= 0 || isNaN(cantidadGasto)) {
+		if (nombre === '' || cantidad < 1 || isNaN(cantidad)) {
 			setErrorEnGasto(true);
 			return;
 		}
@@ -19,9 +19,9 @@ const FormularioGastos = () => {
 
 	const onChanged = (e) => {
 		if (e.target.name === 'cantidad') {
-			setCantidadGasto(parseInt(e.target.value));
+			setCantidad(parseInt(e.target.value));
 		} else {
-			setNombreGasto(e.target.value);
+			setGasto(e.target.value);
 		}
 	};
 
@@ -45,7 +45,7 @@ const FormularioGastos = () => {
 						type='text'
 						className='form-control'
 						onChange={onChanged}
-						value={nombreGasto}
+						value={nombre}
 						name='nombre'
 						placeholder='Ej. Transporte'
 					/>
@@ -57,7 +57,7 @@ const FormularioGastos = () => {
 						type='number'
 						className='form-control'
 						onChange={onChanged}
-						value={cantidadGasto}
+						value={cantidad}
 						name='cantidad'
 						placeholder='Ej. 300'
 					/>
