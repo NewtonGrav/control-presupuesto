@@ -2,6 +2,7 @@ import React, { useState } from 'react';
 import ColocarPresupuesto from './components/ColocarPresupuesto';
 import FormularioGastos from './components/FormularioGastos';
 import ListadoGastos from './components/ListadoGastos';
+import ControlGastos from './components/ControlGastos';
 
 function App() {
 	const [presupuesto, setPresupuesto] = useState(0);
@@ -32,6 +33,7 @@ function App() {
 							</div>
 							<div className='col'>
 								<ListadoGastos gastos={gastos} />
+								<ControlGastos presupuesto={presupuesto} restante={restante} />
 							</div>
 						</div>
 					)}
