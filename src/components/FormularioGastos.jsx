@@ -58,7 +58,6 @@ const FormularioGastos = ({ setGasto }) => {
 						onChange={(e) => setCantidad(parseInt(e.target.value))}
 						value={cantidad}
 						name='cantidad'
-						placeholder='Ej. 300'
 					/>
 				</div>
 
