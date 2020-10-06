@@ -3,7 +3,7 @@ import Alerta from './Alerta';
 
 const ControlGastos = ({ presupuesto, restante }) => {
 	const [porcentajeRestanteUtilizado, setPorcentajeRestanteUtilizado] = useState(0);
-	const [tipoAlerta, setTipoAlerta] = useState('primary');
+	const [tipoAlerta, setTipoAlerta] = useState('success');
 
 	useEffect(() => {
 		const porcentaje = ((presupuesto - restante) / restante) * 100;
@@ -14,7 +14,7 @@ const ControlGastos = ({ presupuesto, restante }) => {
 		} else if (porcentajeRestanteUtilizado >= 40) {
 			setTipoAlerta('warning');
 		} else {
-			setTipoAlerta('primary');
+			setTipoAlerta('success');
 		}
 	}, [restante]);
 
