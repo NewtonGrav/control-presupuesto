@@ -39,7 +39,7 @@ const FormularioGastos = ({ setGasto }) => {
 
 			<form onSubmit={obtenerGasto}>
 				<div className='mb-3'>
-					<label className='form-label'>Nombre Gasto</label>
+					<label className='form-label'>Nombre</label>
 					<input
 						type='text'
 						className='form-control'
@@ -51,7 +51,7 @@ const FormularioGastos = ({ setGasto }) => {
 				</div>
 
 				<div className='mb-3'>
-					<label className='form-label'>Cantidad Gasto</label>
+					<label className='form-label'>Monto</label>
 					<input
 						type='number'
 						className='form-control'
