@@ -25,17 +25,13 @@ const ColocarPresupuesto = ({
 		setMostrarIngresoPresupuesto(false);
 	};
 
-	function mostrarAlerta() {
-		setTimeout(() => setErrorPresupuesto(false), 4000);
-
-		return <Alerta texto='El presupuesto ingresado es incorrecto' tipo='danger' />;
-	}
-
 	return (
 		<Fragment>
 			<h3 className='display-6 mb-5'>Coloca tu presupuesto</h3>
 
-			{errorPresupuesto ? mostrarAlerta() : null}
+			{errorPresupuesto ? (
+				<Alerta texto='El presupuesto ingresado es incorrecto' tipo='danger' />
+			) : null}
 
 			<form onSubmit={agregarPresupuesto}>
 				<div className='mb-4'>
