@@ -1,28 +1,16 @@
-import React, { Fragment, useState, useEffect } from 'react';
+import React, { Fragment } from 'react';
 import Alerta from './Alerta';
+import { revisarPresupuesto } from './helpers';
 
 const ControlGastos = ({ presupuesto, restante }) => {
-	const [porcentajeRestanteUtilizado, setPorcentajeRestanteUtilizado] = useState(0);
-	const [tipoAlerta, setTipoAlerta] = useState('success');
-
-	useEffect(() => {
-		const porcentaje = ((presupuesto - restante) / restante) * 100;
-		setPorcentajeRestanteUtilizado(porcentaje);
-
-		if (porcentajeRestanteUtilizado >= 70) {
-			setTipoAlerta('danger');
-		} else if (porcentajeRestanteUtilizado >= 40) {
-			setTipoAlerta('warning');
-		} else {
-			setTipoAlerta('success');
-		}
-	}, [restante]);
-
 	return (
 		<Fragment>
 			<Alerta texto={`Presupuesto: $ ${presupuesto}`} tipo='primary' />
 
-			<Alerta texto={`Restante: $ ${restante}`} tipo={tipoAlerta} />
+			<Alerta
+				texto={`Restante: $ ${restante}`}
+				tipo={revisarPresupuesto(presupuesto, restante)}
+			/>
 		</Fragment>
 	);
 };
