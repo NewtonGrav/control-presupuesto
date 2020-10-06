@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import ColocarPresupuesto from './components/ColocarPresupuesto';
 import FormularioGastos from './components/FormularioGastos';
+import ListadoGastos from './components/ListadoGastos';
 
 function App() {
 	const [presupuesto, setPresupuesto] = useState(0);
@@ -29,7 +30,9 @@ function App() {
 							<div className='col'>
 								<FormularioGastos agregarGasto={agregarGasto} />
 							</div>
-							<div className='col'>Lista de Gastos</div>
+							<div className='col'>
+								<ListadoGastos gastos={gastos} />
+							</div>
 						</div>
 					)}
 				</section>
