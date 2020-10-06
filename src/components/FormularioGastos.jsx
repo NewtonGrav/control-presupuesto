@@ -19,7 +19,9 @@ const FormularioGastos = ({ agregarGasto }) => {
 
 		let gasto = { nombre, cantidad, id: Shortid() };
 		agregarGasto(gasto);
-		//TODO Resetear formulario
+
+		setCantidad(0);
+		setNombre('');
 	};
 
 	const onChanged = (e) => {
