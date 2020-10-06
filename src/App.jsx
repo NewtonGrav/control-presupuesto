@@ -14,8 +14,7 @@ function App() {
 	useEffect(() => {
 		if (gasto.id !== undefined) setGastos([...gastos, gasto]);
 
-		// TODO Descontar gasto del presupuesto
-		// setRestante(restante - gasto.cantidad);
+		setRestante(restante - gasto.cantidad);
 	}, [gasto]);
 
 	return (
