@@ -9,6 +9,7 @@ function App() {
 	const [restante, setRestante] = useState(0);
 	const [gastos, setGastos] = useState([]);
 	const [mostrarIngresoPresupuesto, setMostrarIngresoPresupuesto] = useState(true);
+	const [gasto, setGasto] = useState({});
 
 	const agregarGasto = (gasto) => {
 		setGastos([...gastos, gasto]);
@@ -29,7 +30,7 @@ function App() {
 					) : (
 						<div className='row'>
 							<div className='col'>
-								<FormularioGastos agregarGasto={agregarGasto} />
+								<FormularioGastos setGasto={setGasto} />
 							</div>
 							<div className='col'>
 								<ListadoGastos gastos={gastos} />
