@@ -3,7 +3,7 @@ import Shortid from 'shortid';
 import Alerta from './Alerta';
 
 const FormularioGastos = ({ agregarGasto }) => {
-	const [nombre, setGasto] = useState('');
+	const [nombre, setNombre] = useState('');
 	const [cantidad, setCantidad] = useState(0);
 	const [errorEnGasto, setErrorEnGasto] = useState(false);
 
@@ -26,7 +26,7 @@ const FormularioGastos = ({ agregarGasto }) => {
 		if (e.target.name === 'cantidad') {
 			setCantidad(parseInt(e.target.value));
 		} else {
-			setGasto(e.target.value);
+			setNombre(e.target.value);
 		}
 	};
 
