@@ -5,7 +5,12 @@ import FormularioGastos from './components/FormularioGastos';
 function App() {
 	const [presupuesto, setPresupuesto] = useState(0);
 	const [restante, setRestante] = useState(0);
-	const [mostrarIngresoPresupuesto, setMostrarIngresoPresupuesto] = useState(true)
+	const [gastos, setGastos] = useState([]);
+	const [mostrarIngresoPresupuesto, setMostrarIngresoPresupuesto] = useState(true);
+
+	const agregarGasto = (gasto) => {
+		setGastos([...gastos, gasto]);
+	}
 
 	return (
 		<div className='container'>
@@ -22,7 +27,7 @@ function App() {
 					) : (
 						<div className='row'>
 							<div className='col'>
-								<FormularioGastos />
+								<FormularioGastos agregarGasto={agregarGasto} />
 							</div>
 							<div className='col'>Lista de Gastos</div>
 						</div>
