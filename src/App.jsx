@@ -12,10 +12,10 @@ function App() {
 	const [gasto, setGasto] = useState({});
 
 	useEffect(() => {
-		if (gasto.id !== undefined) setGastos([...gastos, gasto]);
+		if (gasto.id) setGastos([...gastos, gasto]);
 
-		setRestante(restante - gasto.cantidad);
-	}, [gasto]);
+		if (gasto.cantidad) setRestante(restante - gasto.cantidad);
+	}, [gasto]); // eslint-disable-line react-hooks/exhaustive-deps
 
 	return (
 		<div className='container'>
