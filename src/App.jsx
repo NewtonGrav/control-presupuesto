@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import ColocarPresupuesto from './components/ColocarPresupuesto';
 import FormularioGastos from './components/FormularioGastos';
 import ListadoGastos from './components/ListadoGastos';
@@ -11,9 +11,12 @@ function App() {
 	const [mostrarIngresoPresupuesto, setMostrarIngresoPresupuesto] = useState(true);
 	const [gasto, setGasto] = useState({});
 
-	const agregarGasto = (gasto) => {
-		setGastos([...gastos, gasto]);
-	}
+	useEffect(() => {
+		if (gasto.id !== undefined) setGastos([...gastos, gasto]);
+
+		// TODO Descontar gasto del presupuesto
+		// setRestante(restante - gasto.cantidad);
+	}, [gasto]);
 
 	return (
 		<div className='container'>
