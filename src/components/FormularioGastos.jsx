@@ -24,14 +24,6 @@ const FormularioGastos = ({ agregarGasto }) => {
 		setNombre('');
 	};
 
-	const onChanged = (e) => {
-		if (e.target.name === 'cantidad') {
-			setCantidad(parseInt(e.target.value));
-		} else {
-			setNombre(e.target.value);
-		}
-	};
-
 	return (
 		<Fragment>
 			<h3 className='mb-5'>Agrega tus gastos</h3>
@@ -51,7 +43,7 @@ const FormularioGastos = ({ agregarGasto }) => {
 					<input
 						type='text'
 						className='form-control'
-						onChange={onChanged}
+						onChange={(e) => setNombre(e.target.value)}
 						value={nombre}
 						name='nombre'
 						placeholder='Ej. Transporte'
@@ -63,7 +55,7 @@ const FormularioGastos = ({ agregarGasto }) => {
 					<input
 						type='number'
 						className='form-control'
-						onChange={onChanged}
+						onChange={(e) => setCantidad(parseInt(e.target.value))}
 						value={cantidad}
 						name='cantidad'
 						placeholder='Ej. 300'
