@@ -2,7 +2,7 @@ import React, { Fragment, useState } from 'react';
 import Shortid from 'shortid';
 import Alerta from './Alerta';
 
-const FormularioGastos = ({ agregarGasto }) => {
+const FormularioGastos = ({ setGasto }) => {
 	const [nombre, setNombre] = useState('');
 	const [cantidad, setCantidad] = useState(0);
 	const [errorEnGasto, setErrorEnGasto] = useState(false);
@@ -18,7 +18,7 @@ const FormularioGastos = ({ agregarGasto }) => {
 		setErrorEnGasto(false);
 
 		let gasto = { nombre, cantidad, id: Shortid() };
-		agregarGasto(gasto);
+		setGasto(gasto);
 
 		setCantidad(0);
 		setNombre('');
