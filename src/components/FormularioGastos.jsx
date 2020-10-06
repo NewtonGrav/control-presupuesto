@@ -27,13 +27,15 @@ const FormularioGastos = () => {
 
 	return (
 		<Fragment>
-			<h3>Agrega tus gastos</h3>
+			<h3 className="mb-5">Agrega tus gastos</h3>
 
 			{errorEnGasto ? (
+				<div className="my-4">
 				<Alerta
 					texto='El gasto ingresado no parece correcto. Verifique los campos'
 					tipo='danger'
 				/>
+				</div>
 			) : null}
 
 			<form onSubmit={agregarGasto}>
