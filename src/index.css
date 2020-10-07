@@ -3,9 +3,12 @@
 }
 
 body {
+	height: 100vh;
 	background: #000428; /* fallback for old browsers */
 	background: -webkit-linear-gradient(to right, #004e92, #000428);
-	background: linear-gradient(to right, #004e92, #000428);
+	background: linear-gradient(45deg, #004e92, #000428);
+	background-repeat: no-repeat;
+	background-size: cover;
 	margin: 0;
 	padding: 0;
 	font-family: sans-serif;
