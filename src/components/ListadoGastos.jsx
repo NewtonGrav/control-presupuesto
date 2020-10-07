@@ -3,7 +3,7 @@ import PropTypes from 'prop-types';
 import Gasto from './Gasto';
 
 const ListadoGastos = ({ gastos }) => (
-	<div className='gastos-realizados'>
+	<div className='gastos-realizados mb-4'>
 		<h3 className='mb-4'>Listado</h3>
 
 		{gastos.map((gasto) => (
