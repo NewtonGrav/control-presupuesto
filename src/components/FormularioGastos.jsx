@@ -25,6 +25,11 @@ const FormularioGastos = ({ setGasto }) => {
 		setNombre('');
 	};
 
+	const onChangeCantidad = (e) => {
+		let value = parseInt(e.target.value);
+		if (!isNaN(value)) setCantidad(value);
+	};
+
 	return (
 		<Fragment>
 			<h3 className='mb-5'>Agrega tus gastos</h3>
@@ -56,7 +61,7 @@ const FormularioGastos = ({ setGasto }) => {
 					<input
 						type='number'
 						className='form-control'
-						onChange={(e) => setCantidad(parseInt(e.target.value))}
+						onChange={(e) => onChangeCantidad(e)}
 						value={cantidad}
 						name='cantidad'
 					/>
