@@ -1,4 +1,5 @@
 import React, { Fragment, useState } from 'react';
+import PropTypes from 'prop-types';
 import Alerta from './Alerta';
 
 const ColocarPresupuesto = ({
@@ -49,6 +50,12 @@ const ColocarPresupuesto = ({
 			</form>
 		</Fragment>
 	);
+};
+
+ColocarPresupuesto.propTypes = {
+	setPresupuesto: PropTypes.func.isRequired,
+	setRestante: PropTypes.func.isRequired,
+	setMostrarIngresoPresupuesto: PropTypes.func.isRequired,
 };
 
 export default ColocarPresupuesto;

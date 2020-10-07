@@ -1,4 +1,5 @@
 import React, { Fragment, useState } from 'react';
+import PropTypes from 'prop-types';
 import Shortid from 'shortid';
 import Alerta from './Alerta';
 
@@ -67,6 +68,10 @@ const FormularioGastos = ({ setGasto }) => {
 			</form>
 		</Fragment>
 	);
+};
+
+FormularioGastos.propTypes = {
+	setGasto: PropTypes.func.isRequired,
 };
 
 export default FormularioGastos;

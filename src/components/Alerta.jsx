@@ -1,4 +1,5 @@
 import React from 'react';
+import PropTypes from 'prop-types'
 
 const Alerta = ({ texto, tipo }) => {
 	return (
@@ -8,6 +9,9 @@ const Alerta = ({ texto, tipo }) => {
 	);
 };
 
-// TODO PropType
+Alerta.propTypes = {
+	texto: PropTypes.string.isRequired,
+	tipo: PropTypes.string.isRequired
+}
 
 export default Alerta;
