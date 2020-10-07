@@ -32,7 +32,7 @@ const FormularioGastos = ({ setGasto }) => {
 
 	return (
 		<Fragment>
-			<h3 className='mb-5'>Agrega tus gastos</h3>
+			<h3 className='mb-4'>Agrega tus gastos</h3>
 
 			{errorEnGasto ? (
 				<div className='my-4'>

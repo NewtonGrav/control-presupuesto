@@ -30,7 +30,7 @@ function App() {
 							setMostrarIngresoPresupuesto={setMostrarIngresoPresupuesto}
 						/>
 					) : (
-						<div className='row'>
+						<div className='row g-5'>
 							<div className='col'>
 								<FormularioGastos setGasto={setGasto} />
 							</div>

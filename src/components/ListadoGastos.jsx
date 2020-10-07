@@ -4,7 +4,7 @@ import Gasto from './Gasto';
 
 const ListadoGastos = ({ gastos }) => (
 	<div className='gastos-realizados'>
-		<h3 className='mb-5'>Listado</h3>
+		<h3 className='mb-4'>Listado</h3>
 
 		{gastos.map((gasto) => (
 			<Gasto gasto={gasto} key={gasto.id} />
